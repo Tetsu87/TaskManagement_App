@@ -3,10 +3,9 @@ from datetime import datetime, date
 
 from flask import Flask, render_template,request,redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
-
+# from flask_heroku import Heroku
 
 app = Flask(__name__)
-
 # conf = configparser.ConfigParser()
 # conf.read('config.ini')
 # USERNAME = conf["postgresql"]["USERNAME"]
@@ -14,8 +13,9 @@ app = Flask(__name__)
 # URI = 'postgresql://' + USERNAME + ':' + PASSWORD + '@localhost/todo'
 # URI = 'postgresql://kaitetsuro:majestyc@localhost/todo'
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://kaitetsuro:majestyc@localhost/todo'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://uguzpaowiqtzvi:e9252b774c264bc70a242ab4bc9f081d14bc134145144f0eebab6ae1263c878a@ec2-3-212-143-188.compute-1.amazonaws.com:5432/d8i7dlato8vnhn'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://kaitetsuro:majestyc@localhost/todo'
+# heroku = Heroku(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://uguzpaowiqtzvi:e9252b774c264bc70a242ab4bc9f081d14bc134145144f0eebab6ae1263c878a@ec2-3-212-143-188.compute-1.amazonaws.com:5432/d8i7dlato8vnhn'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 
