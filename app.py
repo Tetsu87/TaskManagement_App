@@ -13,7 +13,6 @@ USERNAME = conf["postgresql"]["USERNAME"]
 PASSWORD = conf["postgresql"]["PASSWORD"]
 URI = 'postgresql://' + USERNAME + ':' + PASSWORD + '@localhost/todo'
 
-# app.config['SQLALCHEMY_DATABASE_URI']='postgresql://kaitetsuro:majestyc@localhost/todo'
 app.config['SQLALCHEMY_DATABASE_URI'] = URI
 db = SQLAlchemy(app)
 
