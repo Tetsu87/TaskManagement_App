@@ -7,13 +7,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-conf = configparser.ConfigParser()
-conf.read('config.ini')
-USERNAME = conf["postgresql"]["USERNAME"]
-PASSWORD = conf["postgresql"]["PASSWORD"]
-URI = 'postgresql://' + USERNAME + ':' + PASSWORD + '@localhost/todo'
+# conf = configparser.ConfigParser()
+# conf.read('config.ini')
+# USERNAME = conf["postgresql"]["USERNAME"]
+# PASSWORD = conf["postgresql"]["PASSWORD"]
+# URI = 'postgresql://' + USERNAME + ':' + PASSWORD + '@localhost/todo'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = URI
+# app.config['SQLALCHEMY_DATABASE_URI'] = URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 
 class Post(db.Model):
