@@ -12,9 +12,10 @@ app = Flask(__name__)
 # USERNAME = conf["postgresql"]["USERNAME"]
 # PASSWORD = conf["postgresql"]["PASSWORD"]
 # URI = 'postgresql://' + USERNAME + ':' + PASSWORD + '@localhost/todo'
+# URI = 'postgresql://kaitetsuro:majestyc@localhost/todo'
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://kaitetsuro:majestyc@localhost/todo'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todo.db'
 db = SQLAlchemy(app)
 
 class Post(db.Model):
